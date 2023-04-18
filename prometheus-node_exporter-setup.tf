@@ -12,7 +12,7 @@ resource "aws_instance" "node-exporter" {
   key_name                    = "myec2keypair"
   vpc_security_group_ids      = [aws_security_group.node_exp_sg.id]
   associate_public_ip_address = true
-  user_data                   = file("start.sh")
+  user_data                   = file("node-exporter.sh")
   tags = {
     Name = "node-exporter-tf"
   }
